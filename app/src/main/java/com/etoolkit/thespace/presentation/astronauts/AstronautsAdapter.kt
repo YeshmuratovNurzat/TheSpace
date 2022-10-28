@@ -1,10 +1,10 @@
 package com.etoolkit.thespace.presentation.astronauts
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ItemTouchHelper
+import android.view.animation.AnimationUtils
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -18,20 +18,25 @@ class AstronautsAdapter : RecyclerView.Adapter<AstronautsAdapter.AstronautsHolde
 
     var onClick : ((Astronaut) -> Unit)? = null
 
+
     class AstronautsHolder(private val binding: ItemAstronautBinding) : RecyclerView.ViewHolder(binding.root){
+
+        lateinit var cardView : CardView
 
         fun bind(astronaut: Astronaut){
 
             Glide.with(binding.root)
                 .load(astronaut.profile_image)
                 .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                .placeholder(R.drawable.ic_launcher_foreground)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.ic_account)
                 .into(binding.astronautImage)
 
             binding.astronautName.text = astronaut.name
             binding.astronautAgency.text = astronaut.agency.name
             binding.astronautNationality.text = astronaut.nationality
+
+            cardView = binding.cardContainer
         }
     }
 
@@ -47,6 +52,9 @@ class AstronautsAdapter : RecyclerView.Adapter<AstronautsAdapter.AstronautsHolde
         holder.itemView.setOnClickListener {
             onClick?.invoke(astronauts[position])
         }
+
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context,R.anim.rc_anim_two))
+
     }
 
     override fun getItemCount(): Int {

@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.etoolkit.thespace.R
@@ -16,6 +18,7 @@ class AstronautsDetailFragment : Fragment() {
 
     private var _binding: FragmentAstronautsDetailBinding? = null
     private val binding get() = _binding!!
+    private lateinit var navController: NavController
     private lateinit var astronaut : Astronaut
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +29,9 @@ class AstronautsDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAstronautsDetailBinding.inflate(layoutInflater,container,false)
+
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main)
+
         return binding.root
     }
 
@@ -36,7 +42,7 @@ class AstronautsDetailFragment : Fragment() {
             .load(astronaut.profile_image)
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.drawable.ic_launcher_foreground)
+            .placeholder(R.drawable.ic_account)
             .into(binding.astronautDetailImage)
 
         binding.astronautName.text = astronaut.name
@@ -52,7 +58,7 @@ class AstronautsDetailFragment : Fragment() {
 
 
         binding.back.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            navController.navigate(R.id.action_astronautsDetailFragment_to_astronautsFragment)
         }
     }
 

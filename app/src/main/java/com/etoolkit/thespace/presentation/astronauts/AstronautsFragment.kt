@@ -23,7 +23,6 @@ class AstronautsFragment : Fragment() {
     private var _binding: FragmentAstronautsBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-    private lateinit var mLayoutManager : LayoutManager
     private val viewModel by viewModels<AstronautsViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,28 +42,6 @@ class AstronautsFragment : Fragment() {
 
         val astronautsAdapter = AstronautsAdapter()
         binding.rcView.adapter = astronautsAdapter
-
-        mLayoutManager = LinearLayoutManager(requireActivity())
-
-        binding.rcView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-
-                var visibleItemCount = recyclerView.childCount
-                var totalItemCount = mLayoutManager.itemCount
-                var firstVisibleItem = (mLayoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
-                var lastVisibleItem = (mLayoutManager as LinearLayoutManager).findLastVisibleItemPosition()
-
-            }
-        })
-
-        val itemTouchHelper = ItemTouchHelper(object : SwipeHelper(binding.rcView) {
-
-        })
-
-        itemTouchHelper.attachToRecyclerView(binding.rcView)
-
 
         astronautsAdapter.onClick = {
             val bundle = Bundle()

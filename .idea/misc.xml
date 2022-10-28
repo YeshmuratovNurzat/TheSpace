@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/circle_button.xml" value="0.181" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_account.xml" value="0.181" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_keyboard_backspace.xml" value="0.183" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_rocket.xml" value="0.196" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/tab_layout_radius.xml" value="0.183" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_event_detail_program.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launch.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launches.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_actronauts.xml" value="0.22135416666666666" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_events.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_launch_detail.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_placeholder_layout.xml" value="0.22239583333333332" />

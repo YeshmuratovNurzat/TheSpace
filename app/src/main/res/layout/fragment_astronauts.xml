@@ -102,20 +102,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
-            <include layout="@layout/shimmer_placeholder_layout" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
+            <include layout="@layout/shimmer_astronauts" />
 
         </LinearLayout>
 
