@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/eventsFragment">
+
+    <fragment
+        android:id="@+id/astronautsFragment"
+        android:name="com.etoolkit.thespace.presentation.astronauts.AstronautsFragment"
+        android:label="fragment_astronauts"
+        tools:layout="@layout/fragment_astronauts" >
+        <action
+            android:id="@+id/action_astronautsFragment_to_astronautsDetailFragment"
+            app:destination="@id/astronautsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/astronautsDetailFragment"
+        android:name="com.etoolkit.thespace.presentation.astronauts.AstronautsDetailFragment"
+        android:label="fragment_astronauts_detail"
+        tools:layout="@layout/fragment_astronauts_detail" >
+        <action
+            android:id="@+id/action_astronautsDetailFragment_to_astronautsFragment"
+            app:destination="@id/astronautsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchesFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.LaunchesFragment"
+        android:label="fragment_launches"
+        tools:layout="@layout/fragment_launches" >
+        <action
+            android:id="@+id/action_launchesFragment_to_launchesDetailFragment"
+            app:destination="@id/launchesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchesDetailFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.LaunchesDetailFragment"
+        android:label="LaunchesDetailFragment" >
+        <action
+            android:id="@+id/action_launchesDetailFragment_to_launchesFragment"
+            app:destination="@id/launchesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.etoolkit.thespace.presentation.events.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" >
+        <action
+            android:id="@+id/action_eventsFragment_to_eventsDetailFragment"
+            app:destination="@id/eventsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsDetailFragment"
+        android:name="com.etoolkit.thespace.presentation.events.EventsDetailFragment"
+        android:label="fragment_events_detail"
+        tools:layout="@layout/fragment_events_detail" >
+        <action
+            android:id="@+id/action_eventsDetailFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+    </fragment>
+</navigation>
