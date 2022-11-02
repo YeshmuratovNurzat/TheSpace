@@ -37,6 +37,7 @@
                 app:tint="@color/black" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -80,6 +81,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="10dp"
+                app:civ_border_width="3dp"
+                app:civ_border_color="@color/color_civ_border"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:src="@drawable/ic_launcher_background"/>
@@ -140,6 +143,14 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <View
+                android:layout_width="300dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/color_background_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/astronaut_detail_image"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/astronaut_bio"
@@ -151,24 +162,32 @@
                 android:textColor="@color/black"
                 android:textAlignment="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="10dp"
-                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_detail_image" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/color_background_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/astronaut_bio"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/astronaut_agency_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Agency:"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_bio" />
 
@@ -177,11 +196,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Agency"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 app:layout_constraintStart_toEndOf="@+id/astronaut_agency_title"
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_bio" />
 
@@ -190,7 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="First Flight:"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
@@ -204,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="First flight"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="5dp"
@@ -213,11 +232,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_agency" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/astronaut_flights_count_title"
+                android:id="@+id/astronaut_last_flight_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flights Count:"
-                android:textSize="16sp"
+                android:text="Last Flight:"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
@@ -227,16 +246,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_first_flight" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/astronaut_flights_count"
+                android:id="@+id/astronaut_last_flight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Flights Count"
-                android:textSize="16sp"
+                android:text="Last Flight:"
+                android:textSize="18sp"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toEndOf="@+id/astronaut_flights_count_title"
+                app:layout_constraintStart_toEndOf="@+id/astronaut_last_flight_title"
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_first_flight" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -244,34 +263,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Landings Count:"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/astronaut_flights_count" />
+                app:layout_constraintTop_toBottomOf="@+id/astronaut_last_flight" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/astronaut_landings_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Landings Count"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toEndOf="@+id/astronaut_landings_count_title"
-                app:layout_constraintTop_toBottomOf="@+id/astronaut_flights_count" />
+                app:layout_constraintTop_toBottomOf="@+id/astronaut_last_flight" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/astronaut_last_flight_title"
+                android:id="@+id/astronaut_flights_count_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last Flight:"
-                android:textSize="16sp"
+                android:text="Flights Count"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
@@ -281,16 +300,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_landings_count" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/astronaut_last_flight"
+                android:id="@+id/astronaut_flights_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last Flight"
-                android:textSize="16sp"
+                android:text="Flights Count"
+                android:textSize="18sp"
                 android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toEndOf="@+id/astronaut_last_flight_title"
+                app:layout_constraintStart_toEndOf="@+id/astronaut_flights_count_title"
                 app:layout_constraintTop_toBottomOf="@+id/astronaut_landings_count" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

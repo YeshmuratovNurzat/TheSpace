@@ -30,7 +30,7 @@ class AstronautsDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAstronautsDetailBinding.inflate(layoutInflater,container,false)
 
-        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main)
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
 
         return binding.root
     }
@@ -56,6 +56,7 @@ class AstronautsDetailFragment : Fragment() {
         binding.astronautLandingsCount.text = astronaut.landings_count.toString()
         binding.astronautLastFlight.text = astronaut.last_flight
 
+        binding.toolbarName.text = astronaut.name
 
         binding.back.setOnClickListener {
             navController.navigate(R.id.action_astronautsDetailFragment_to_astronautsFragment)

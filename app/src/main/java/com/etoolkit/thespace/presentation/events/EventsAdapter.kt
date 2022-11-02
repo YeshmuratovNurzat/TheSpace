@@ -13,6 +13,7 @@ import com.etoolkit.thespace.domain.events.model.Event
 class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsHolder>(){
 
     var onClick : ((Event) -> Unit)? = null
+
     private var events = emptyList<Event>()
 
     class EventsHolder(private val binding: ItemEventBinding) : RecyclerView.ViewHolder(binding.root){
@@ -23,14 +24,13 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsHolder>(){
                 .load(event.feature_image)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.ic_launcher_foreground)
+                .placeholder(R.drawable.ic_newspaper)
                 .into(binding.eventImage)
 
             binding.eventName.text = event.name
             binding.eventData.text = event.date
             binding.eventStatus.text = event.type.name
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsHolder {

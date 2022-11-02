@@ -1,5 +1,6 @@
 package com.etoolkit.thespace.presentation.events
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,13 +12,20 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.FragmentEventsBinding
+import com.etoolkit.thespace.util.interfaces.DrawerViewInterface
 
 class EventsFragment : Fragment() {
 
     private var _binding : FragmentEventsBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
+    private lateinit var drawerViewInterface: DrawerViewInterface
     private val viewModel by viewModels<EventsViewModel>()
+
+    override fun onAttach(context: Context) {
+        drawerViewInterface = requireActivity() as DrawerViewInterface
+        super.onAttach(context)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +43,7 @@ class EventsFragment : Fragment() {
         val eventsAdapter = EventsAdapter()
         binding.rcView.adapter = eventsAdapter
 
-        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main)
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
 
         eventsAdapter.onClick = {
             val bundle = Bundle()
@@ -51,6 +59,10 @@ class EventsFragment : Fragment() {
 
             Log.d("MyLog","getEventsResult = ${it.results}")
             eventsAdapter.setListData(it.results)
+        }
+
+        binding.menu.setOnClickListener {
+            drawerViewInterface.showDrawer()
         }
     }
 

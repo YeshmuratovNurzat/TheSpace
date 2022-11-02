@@ -53,7 +53,7 @@ class AstronautsAdapter : RecyclerView.Adapter<AstronautsAdapter.AstronautsHolde
             onClick?.invoke(astronauts[position])
         }
 
-        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context,R.anim.rc_anim_two))
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rc_anim_two))
 
     }
 

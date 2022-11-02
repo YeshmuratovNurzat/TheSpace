@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/astronautsFragment">
+    app:startDestination="@id/launchesFragment">
 
     <fragment
         android:id="@+id/astronautsFragment"
@@ -12,6 +12,9 @@
         tools:layout="@layout/fragment_astronauts" >
         <action
             android:id="@+id/action_astronautsFragment_to_astronautsDetailFragment"
+            app:destination="@id/astronautsDetailFragment" />
+        <action
+            android:id="@+id/action_astronautsFragment_to_astronautsDetailFragment2"
             app:destination="@id/astronautsDetailFragment" />
     </fragment>
     <fragment
@@ -31,6 +34,15 @@
         <action
             android:id="@+id/action_launchesFragment_to_launchesDetailFragment"
             app:destination="@id/launchesDetailFragment" />
+        <action
+            android:id="@+id/action_launchesFragment_to_astronautsFragment"
+            app:destination="@id/astronautsFragment" />
+        <action
+            android:id="@+id/action_launchesFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_launchesFragment_to_eventsFragment2"
+            app:destination="@id/eventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/launchesDetailFragment"

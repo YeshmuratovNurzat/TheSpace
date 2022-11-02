@@ -36,7 +36,7 @@ class LaunchesDetailFragment : Fragment() {
         Glide.with(binding.root)
             .load(launch.image)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.drawable.ic_launcher_foreground)
+            .placeholder(R.drawable.ic_rocket)
             .into(binding.launchDetailImage)
 
         binding.launchName.text = launch.name ?: " "
@@ -46,6 +46,13 @@ class LaunchesDetailFragment : Fragment() {
         binding.launchLocation.text = launch.pad.location.name
         binding.launchMission.text = launch.mission.description
         binding.launchServiceProvider.text = launch.launch_service_provider.name
+
+        binding.toolbarName.text = launch.name
+
+        if(launch.infographic != null){
+            binding.launchInfographic.visibility = View.VISIBLE
+            binding.launchInfographic.text = launch.infographic
+        }
 
         if (launch.status.name == "Launch Failure") {
             binding.launchStatus.setTextColor(Color.parseColor("#FF0000")) //red
@@ -58,17 +65,17 @@ class LaunchesDetailFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     companion object {
 
         fun newInstance() = LaunchesDetailFragment().apply {
             arguments = Bundle().apply {
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 }

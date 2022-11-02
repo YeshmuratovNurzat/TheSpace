@@ -5,17 +5,31 @@
       <map>
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/circle_button.xml" value="0.181" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_account.xml" value="0.181" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_astronaut.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_exit.xml" value="0.182" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_keyboard_backspace.xml" value="0.183" />
-        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_rocket.xml" value="0.196" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_lander_svgrepo_com.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_liftoff.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_menu.xml" value="0.176" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_newspaper.xml" value="0.181" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_observatory_svgrepo_com.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_planet_space.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_rocket.xml" value="0.2" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_search.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_solar_system_space.xml" value="0.182" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/ic_solar_system_space_1.xml" value="0.182" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/drawable/tab_layout_radius.xml" value="0.183" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/font/roboto.xml" value="0.2598958333333333" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/activity_splash_screen.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/drawer_image.xml" value="0.22135416666666666" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_agencies.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_agencies_detail.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_astronauts.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_astronauts_detail.xml" value="0.264" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_events.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_events_detail.xml" value="0.264" />
-        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches.xml" value="0.264" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches_detail.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches_main.xml" value="0.2046875" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_main.xml" value="0.22239583333333332" />
@@ -26,9 +40,12 @@
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launch.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launches.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_actronauts.xml" value="0.22135416666666666" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_astronauts.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_events.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_launch_detail.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_launches.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_placeholder_layout.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/menu/drawer_menu.xml" value="0.4" />
       </map>
     </option>
   </component>

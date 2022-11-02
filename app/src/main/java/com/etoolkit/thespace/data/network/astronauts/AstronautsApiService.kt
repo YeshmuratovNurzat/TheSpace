@@ -6,10 +6,10 @@ import retrofit2.http.Query
 
 interface AstronautsApiService {
 
-    @GET("astronaut")
+    @GET("astronaut/?limit=100")
     suspend fun getAstronauts() : ResultAstronauts
 
-    @GET("astronaut")
+    @GET("astronaut/?limit=100")
     suspend fun getAstronautsOffset(@Query("offset") offset : String) : ResultAstronauts
 
     @GET("astronaut")

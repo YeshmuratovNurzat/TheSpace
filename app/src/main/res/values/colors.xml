@@ -12,4 +12,5 @@
     <color name="failure_color">#FF0000</color>
     <color name="color_background">#F3F3F3</color>
     <color name="color_background_view">#c0c0c0</color>
+    <color name="color_civ_border">#D6EAF8</color>
 </resources>

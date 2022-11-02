@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -19,6 +21,7 @@ class LaunchesAdapter : RecyclerView.Adapter<LaunchesAdapter.LaunchesHolder>() {
 
     class LaunchesHolder(private val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root){
 
+        lateinit var cardView: CardView
 
         fun bind(launches: Launch){
 
@@ -26,12 +29,14 @@ class LaunchesAdapter : RecyclerView.Adapter<LaunchesAdapter.LaunchesHolder>() {
                 .load(launches.image)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.rocket)
+                .placeholder(R.drawable.ic_rocket)
                 .into(binding.launchImage)
 
             binding.launchName.text = launches.name
             binding.launchMission.text = launches.mission.name
             binding.launchStatus.text = launches.status.name
+
+            cardView = binding.cardContainer
 
             if(launches.status.name == "Launch Failure"){
                 binding.launchStatus.setTextColor(Color.parseColor("#FF0000")) //red
@@ -53,6 +58,8 @@ class LaunchesAdapter : RecyclerView.Adapter<LaunchesAdapter.LaunchesHolder>() {
         holder.itemView.setOnClickListener {
             onClick?.invoke(launches[position])
         }
+
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context,R.anim.rc_anim_two))
     }
 
     override fun getItemCount(): Int {
@@ -64,5 +71,4 @@ class LaunchesAdapter : RecyclerView.Adapter<LaunchesAdapter.LaunchesHolder>() {
         this.launches = astronauts
         notifyDataSetChanged()
     }
-
 }

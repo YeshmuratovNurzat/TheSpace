@@ -1,5 +1,6 @@
 package com.etoolkit.thespace.presentation.astronauts
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,19 +12,22 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.FragmentAstronautsBinding
+import com.etoolkit.thespace.util.interfaces.DrawerViewInterface
 
 class AstronautsFragment : Fragment() {
 
     private var _binding: FragmentAstronautsBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
+    private lateinit var drawerViewInterface: DrawerViewInterface
     private val viewModel by viewModels<AstronautsViewModel>()
+
+    override fun onAttach(context: Context) {
+        drawerViewInterface = requireActivity() as DrawerViewInterface
+        super.onAttach(context)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +42,8 @@ class AstronautsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main)
+
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
 
         val astronautsAdapter = AstronautsAdapter()
         binding.rcView.adapter = astronautsAdapter
@@ -57,6 +62,7 @@ class AstronautsFragment : Fragment() {
 
             Log.d("MyLog", "getAstronautsResult = ${it.results}")
             astronautsAdapter.setListData(it.results)
+
         }
 
         binding.employeeSearch.addTextChangedListener(object : TextWatcher{
@@ -75,19 +81,24 @@ class AstronautsFragment : Fragment() {
                     viewModel.getAstronautsSearchResult.observe(viewLifecycleOwner){
 
                         if (it == null){
-                            Log.d("MyLog","Search = null")
                             binding.searchResultNull.visibility = View.VISIBLE
+                            Log.d("MyLog", "getAstronautsSearchResult = ${it?.results}")
                         }
 
                         invisibleShimmer()
 
                         binding.searchResultNull.visibility = View.GONE
-                        Log.d("MyLog","getAstronautsSearchResult = ${it.results}")
+                        Log.d("MyLog", "getAstronautsSearchResult = ${it.results}")
                         astronautsAdapter.setListData(it.results.asReversed())
+
                     }
                 }
             }
         })
+
+        binding.menu.setOnClickListener {
+            drawerViewInterface.showDrawer()
+        }
     }
 
     // startShimmerAnimation()

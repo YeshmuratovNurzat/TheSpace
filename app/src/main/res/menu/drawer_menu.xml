@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/launches"
+        android:title="Launchs"
+        android:icon="@drawable/ic_liftoff"/>
+
+    <item
+        android:id="@+id/events"
+        android:title="Events"
+        android:icon="@drawable/ic_lander"/>
+
+    <item
+        android:id="@+id/astronauts"
+        android:title="Astronauts"
+        android:icon="@drawable/ic_astronaut"/>
+
+    <item
+        android:id="@+id/agencies"
+        android:title="Agencies"
+        android:icon="@drawable/ic_observatory"/>
+
+    <item
+        android:id="@+id/exit"
+        android:title="Exit"
+        android:icon="@drawable/ic_exit"/>
+
+</menu>

@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.FragmentEventsDetailBinding
@@ -15,6 +17,7 @@ class EventsDetailFragment : Fragment() {
 
     private var _binding : FragmentEventsDetailBinding? = null
     private val binding get() = _binding!!
+    private lateinit var navController: NavController
     private lateinit var event : Event
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +28,9 @@ class EventsDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentEventsDetailBinding.inflate(layoutInflater,container,false)
+
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
+
         return binding.root
     }
 
@@ -34,7 +40,7 @@ class EventsDetailFragment : Fragment() {
         Glide.with(binding.root)
             .load(event.feature_image)
             .centerCrop()
-            .placeholder(R.drawable.ic_launcher_foreground)
+            .placeholder(R.drawable.ic_newspaper)
             .into(binding.eventImage)
 
         binding.eventName.text = event.name
@@ -48,7 +54,7 @@ class EventsDetailFragment : Fragment() {
         adapter.setListData(event.program)
 
         binding.back.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            navController.navigate(R.id.action_eventsDetailFragment_to_eventsFragment)
         }
 
     }

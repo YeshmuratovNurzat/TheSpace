@@ -66,6 +66,7 @@
                 android:text="Data"
                 android:textSize="14sp"
                 android:ems="15"
+                android:layout_marginTop="5dp"
                 android:background="@color/grey"
                 android:textAlignment="center"
                 android:fontFamily="@font/raude"
