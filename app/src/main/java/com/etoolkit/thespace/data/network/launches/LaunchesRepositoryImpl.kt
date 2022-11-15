@@ -8,4 +8,8 @@ class LaunchesRepositoryImpl(private val service: LaunchesApiService) : Launches
     override suspend fun getLaunches(): ResultLaunches {
         return service.getLaunches()
     }
+
+    override suspend fun getLaunchesUpcoming(): ResultLaunches {
+        return service.getLaunchesUpcoming()
+    }
 }

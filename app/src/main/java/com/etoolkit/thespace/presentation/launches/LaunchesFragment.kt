@@ -19,13 +19,8 @@ class LaunchesFragment : Fragment() {
     private var _binding : FragmentLaunchesBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController : NavController
-    private lateinit var drawerViewInterface: DrawerViewInterface
     private val viewModel by viewModels<LaunchesViewModel>()
 
-    override fun onAttach(context: Context) {
-        drawerViewInterface = requireActivity() as DrawerViewInterface
-        super.onAttach(context)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,10 +54,6 @@ class LaunchesFragment : Fragment() {
 
             Log.d("MyLog","getLaunchesResult = ${it.results}")
             launchesAdapter.setListData(it.results)
-        }
-
-        binding.menu.setOnClickListener {
-            drawerViewInterface.showDrawer()
         }
     }
 

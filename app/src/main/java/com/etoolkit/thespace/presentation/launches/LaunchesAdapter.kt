@@ -67,8 +67,8 @@ class LaunchesAdapter : RecyclerView.Adapter<LaunchesAdapter.LaunchesHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setListData(astronauts : List<Launch>) {
-        this.launches = astronauts
+    fun setListData(launches : List<Launch>) {
+        this.launches = launches
         notifyDataSetChanged()
     }
 }

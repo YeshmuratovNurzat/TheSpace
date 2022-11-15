@@ -2,12 +2,11 @@ package com.etoolkit.thespace.presentation.astronauts
 
 import android.content.Context
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -42,7 +41,6 @@ class AstronautsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
 
         val astronautsAdapter = AstronautsAdapter()
@@ -65,37 +63,32 @@ class AstronautsFragment : Fragment() {
 
         }
 
-        binding.employeeSearch.addTextChangedListener(object : TextWatcher{
+        //search astronaut
+        binding.employeeSearch.setOnEditorActionListener { textView, i, keyEvent ->
 
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            if(i == EditorInfo.IME_ACTION_SEARCH){
+                viewModel.getAstronautSearch(binding.employeeSearch.text.toString())
+                visibilityShimmer()
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+                viewModel.getAstronautsSearchResult.observe(viewLifecycleOwner){
 
-            override fun afterTextChanged(p0: Editable?) {
-
-                if (p0?.length!! > 1){
-                    viewModel.getAstronautSearch(binding.employeeSearch.text.toString())
-
-                    visibilityShimmer()
-
-                    viewModel.getAstronautsSearchResult.observe(viewLifecycleOwner){
-
-                        if (it == null){
-                            binding.searchResultNull.visibility = View.VISIBLE
-                            Log.d("MyLog", "getAstronautsSearchResult = ${it?.results}")
-                        }
-
-                        invisibleShimmer()
-
-                        binding.searchResultNull.visibility = View.GONE
-                        Log.d("MyLog", "getAstronautsSearchResult = ${it.results}")
-                        astronautsAdapter.setListData(it.results.asReversed())
-
+                    if (it == null){
+                        binding.searchResultNull.visibility = View.VISIBLE
+                        Log.d("MyLog", "getAstronautsSearchResult = ${it?.results}")
                     }
+
+                    invisibleShimmer()
+
+                    binding.searchResultNull.visibility = View.GONE
+                    Log.d("MyLog", "getAstronautsSearchResult = ${it.results}")
+                    astronautsAdapter.setListData(it.results.asReversed())
+
                 }
             }
-        })
+            true
+        }
 
+        //showDrawer
         binding.menu.setOnClickListener {
             drawerViewInterface.showDrawer()
         }

@@ -32,12 +32,14 @@
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches.xml" value="0.264" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches_detail.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches_main.xml" value="0.2046875" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_launches_upcoming.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/fragment_main.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_astronaut.xml" value="0.2" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_event.xml" value="0.264" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_event_detail_lauches.xml" value="0.264" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_event_detail_program.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launch.xml" value="0.22239583333333332" />
+        <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launch_upcoming.xml" value="0.22135416666666666" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/item_launches.xml" value="0.22239583333333332" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_actronauts.xml" value="0.22135416666666666" />
         <entry key="..\:/Projects/TheSpace/app/src/main/res/layout/shimmer_astronauts.xml" value="0.22239583333333332" />

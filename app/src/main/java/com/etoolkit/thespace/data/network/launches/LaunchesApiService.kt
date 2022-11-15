@@ -5,7 +5,10 @@ import retrofit2.http.GET
 
 interface LaunchesApiService {
 
-    @GET("launch?limit=100")
+    @GET("launch/limit=100")
     suspend fun getLaunches() : ResultLaunches
+
+    @GET("launch/upcoming")
+    suspend fun getLaunchesUpcoming() : ResultLaunches
 
 }

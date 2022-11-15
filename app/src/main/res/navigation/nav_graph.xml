@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/launchesFragment">
+    app:startDestination="@id/launchesMainFragment">
 
     <fragment
         android:id="@+id/astronautsFragment"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_astronautsFragment_to_astronautsDetailFragment2"
             app:destination="@id/astronautsDetailFragment" />
+        <action
+            android:id="@+id/action_astronautsFragment_to_launchesMainFragment"
+            app:destination="@id/launchesMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/astronautsDetailFragment"
@@ -27,27 +30,12 @@
             app:destination="@id/astronautsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/launchesFragment"
-        android:name="com.etoolkit.thespace.presentation.launches.LaunchesFragment"
-        android:label="fragment_launches"
-        tools:layout="@layout/fragment_launches" >
-        <action
-            android:id="@+id/action_launchesFragment_to_launchesDetailFragment"
-            app:destination="@id/launchesDetailFragment" />
-        <action
-            android:id="@+id/action_launchesFragment_to_astronautsFragment"
-            app:destination="@id/astronautsFragment" />
-        <action
-            android:id="@+id/action_launchesFragment_to_eventsFragment"
-            app:destination="@id/eventsFragment" />
-        <action
-            android:id="@+id/action_launchesFragment_to_eventsFragment2"
-            app:destination="@id/eventsFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/launchesDetailFragment"
         android:name="com.etoolkit.thespace.presentation.launches.LaunchesDetailFragment"
         android:label="LaunchesDetailFragment" >
+        <action
+            android:id="@+id/action_launchesDetailFragment_to_launchesMainFragment"
+            app:destination="@id/launchesMainFragment" />
         <action
             android:id="@+id/action_launchesDetailFragment_to_launchesFragment"
             app:destination="@id/launchesFragment" />
@@ -60,6 +48,9 @@
         <action
             android:id="@+id/action_eventsFragment_to_eventsDetailFragment"
             app:destination="@id/eventsDetailFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_launchesMainFragment"
+            app:destination="@id/launchesMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventsDetailFragment"
@@ -69,5 +60,37 @@
         <action
             android:id="@+id/action_eventsDetailFragment_to_eventsFragment"
             app:destination="@id/eventsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchesUpcomingFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.LaunchesUpcomingFragment"
+        android:label="fragment_launches_upcoming"
+        tools:layout="@layout/fragment_launches_upcoming" />
+    <fragment
+        android:id="@+id/launchesMainFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.LaunchesMainFragment"
+        android:label="fragment_launches_main"
+        tools:layout="@layout/fragment_launches_main" >
+        <action
+            android:id="@+id/action_launchesMainFragment_to_astronautsFragment"
+            app:destination="@id/astronautsFragment" />
+        <action
+            android:id="@+id/action_launchesMainFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+        <action
+            android:id="@+id/action_launchesMainFragment_to_launchesFragment"
+            app:destination="@id/launchesFragment" />
+        <action
+            android:id="@+id/action_launchesMainFragment_to_launchesUpcomingFragment"
+            app:destination="@id/launchesUpcomingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchesFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.LaunchesFragment"
+        android:label="fragment_launches"
+        tools:layout="@layout/fragment_launches" >
+        <action
+            android:id="@+id/action_launchesFragment_to_launchesDetailFragment"
+            app:destination="@id/launchesDetailFragment" />
     </fragment>
 </navigation>

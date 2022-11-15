@@ -74,5 +74,4 @@ class AstronautsDetailFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

@@ -29,24 +29,24 @@ class MainActivity : AppCompatActivity(), DrawerViewInterface {
 
             when(it.itemId){
 
-                R.id.events -> {
-                    Toast.makeText(this,"events",Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.action_launchesFragment_to_eventsFragment)
-                }
-
-                R.id.astronauts -> {
-                    Toast.makeText(this,"astronauts",Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.action_launchesFragment_to_astronautsFragment)
-                }
-
-                R.id.agencies -> {
-                    Toast.makeText(this,"agencies",Toast.LENGTH_SHORT).show()
-                }
-
-                R.id.exit ->{
-                    Toast.makeText(this,"exit",Toast.LENGTH_SHORT).show()
-                    exitProcess(0)
-                }
+//                R.id.events -> {
+//                    Toast.makeText(this,"events",Toast.LENGTH_SHORT).show()
+//                    navController.navigate(R.id.action_launchesFragment_to_eventsFragment)
+//                }
+//
+//                R.id.astronauts -> {
+//                    Toast.makeText(this,"astronauts",Toast.LENGTH_SHORT).show()
+//                    navController.navigate(R.id.action_launchesFragment_to_astronautsFragment)
+//                }
+//
+//                R.id.agencies -> {
+//                    Toast.makeText(this,"agencies",Toast.LENGTH_SHORT).show()
+//                }
+//
+//                R.id.exit ->{
+//                    Toast.makeText(this,"exit",Toast.LENGTH_SHORT).show()
+//                    exitProcess(0)
+//                }
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
