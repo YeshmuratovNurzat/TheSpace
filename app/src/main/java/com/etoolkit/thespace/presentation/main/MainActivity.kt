@@ -1,17 +1,17 @@
 package com.etoolkit.thespace.presentation.main
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.ActivityMainBinding
 import com.etoolkit.thespace.util.interfaces.DrawerViewInterface
 import org.imaginativeworld.oopsnointernet.callbacks.ConnectionCallback
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.NoInternetDialogPendulum
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity(), DrawerViewInterface {
 
@@ -29,24 +29,42 @@ class MainActivity : AppCompatActivity(), DrawerViewInterface {
 
             when(it.itemId){
 
-//                R.id.events -> {
-//                    Toast.makeText(this,"events",Toast.LENGTH_SHORT).show()
-//                    navController.navigate(R.id.action_launchesFragment_to_eventsFragment)
-//                }
-//
-//                R.id.astronauts -> {
-//                    Toast.makeText(this,"astronauts",Toast.LENGTH_SHORT).show()
-//                    navController.navigate(R.id.action_launchesFragment_to_astronautsFragment)
-//                }
-//
-//                R.id.agencies -> {
-//                    Toast.makeText(this,"agencies",Toast.LENGTH_SHORT).show()
-//                }
-//
-//                R.id.exit ->{
-//                    Toast.makeText(this,"exit",Toast.LENGTH_SHORT).show()
-//                    exitProcess(0)
-//                }
+                R.id.launches -> {
+                    Toast.makeText(this,"Launches",Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.events -> {
+                    Toast.makeText(this,"Events",Toast.LENGTH_SHORT).show()
+                    navController.navigate(R.id.action_launchesMainFragment_to_eventsFragment)
+                }
+
+                R.id.astronauts -> {
+                    Toast.makeText(this,"Astronauts",Toast.LENGTH_SHORT).show()
+                    navController.navigate(R.id.action_launchesMainFragment_to_astronautsFragment)
+                }
+
+                R.id.agencies -> {
+                    Toast.makeText(this,"Agencies",Toast.LENGTH_SHORT).show()
+                    navController.navigate(R.id.action_launchesMainFragment_to_agenciesFragment)
+                }
+
+                R.id.exit ->{
+
+                    val dialog = AlertDialog.Builder(this, R.style.DialogStyle)
+                        .setIcon(R.drawable.ic_astronaut_exit)
+                        .setTitle("Exit App")
+                        .setMessage("Are you sure you want to close this activity?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes",DialogInterface.OnClickListener { dialogInterface, i ->
+                            finish()
+                        })
+                        .setNegativeButton("No",null)
+                        .create()
+
+                    dialog.show()
+
+                }
+
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true

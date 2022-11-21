@@ -10,14 +10,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.ItemAstronautBinding
-import com.etoolkit.thespace.domain.astronauts.model.Astronaut
+import com.etoolkit.domain.astronauts.model.Astronaut
 
 class AstronautsAdapter : RecyclerView.Adapter<AstronautsAdapter.AstronautsHolder>() {
 
     private var astronauts = emptyList<Astronaut>()
 
     var onClick : ((Astronaut) -> Unit)? = null
-
 
     class AstronautsHolder(private val binding: ItemAstronautBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -66,4 +65,5 @@ class AstronautsAdapter : RecyclerView.Adapter<AstronautsAdapter.AstronautsHolde
         this.astronauts = astronauts
         notifyDataSetChanged()
     }
+
 }

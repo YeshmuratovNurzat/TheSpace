@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.FragmentAstronautsDetailBinding
-import com.etoolkit.thespace.domain.astronauts.model.Astronaut
+import com.etoolkit.domain.astronauts.model.Astronaut
 
 class AstronautsDetailFragment : Fragment() {
 

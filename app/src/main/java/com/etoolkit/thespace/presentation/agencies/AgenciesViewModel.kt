@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.etoolkit.thespace.data.network.agencies.AgenciesApiFactory
-import com.etoolkit.thespace.data.network.agencies.AgenciesRepositoryImpl
-import com.etoolkit.thespace.domain.agencies.model.ResultAgencies
-import com.etoolkit.thespace.domain.agencies.usecase.GetAgenciesUseCase
+import com.etoolkit.data.network.agencies.AgenciesApiFactory
+import com.etoolkit.data.network.agencies.AgenciesRepositoryImpl
+import com.etoolkit.domain.agencies.model.ResultAgencies
+import com.etoolkit.domain.agencies.usecase.GetAgenciesUseCase
 import kotlinx.coroutines.launch
 
 class AgenciesViewModel : ViewModel() {

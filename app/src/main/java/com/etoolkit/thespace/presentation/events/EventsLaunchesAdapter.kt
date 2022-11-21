@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.etoolkit.thespace.databinding.ItemEventDetailLauchesBinding
-import com.etoolkit.thespace.domain.events.model.Launche
+import com.etoolkit.domain.events.model.Launche
 
 class EventsLaunchesAdapter : RecyclerView.Adapter<EventsLaunchesAdapter.EventsLaunchesViewHolder>() {
 

@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.ItemEventDetailProgramBinding
-import com.etoolkit.thespace.domain.events.model.ProgramX
+import com.etoolkit.domain.events.model.ProgramX
 
 class EventsProgramAdapter : RecyclerView.Adapter<EventsProgramAdapter.EventsProgramViewHolder>() {
 

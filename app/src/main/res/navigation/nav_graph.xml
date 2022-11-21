@@ -30,17 +30,6 @@
             app:destination="@id/astronautsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/launchesDetailFragment"
-        android:name="com.etoolkit.thespace.presentation.launches.LaunchesDetailFragment"
-        android:label="LaunchesDetailFragment" >
-        <action
-            android:id="@+id/action_launchesDetailFragment_to_launchesMainFragment"
-            app:destination="@id/launchesMainFragment" />
-        <action
-            android:id="@+id/action_launchesDetailFragment_to_launchesFragment"
-            app:destination="@id/launchesFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/eventsFragment"
         android:name="com.etoolkit.thespace.presentation.events.EventsFragment"
         android:label="fragment_events"
@@ -62,11 +51,6 @@
             app:destination="@id/eventsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/launchesUpcomingFragment"
-        android:name="com.etoolkit.thespace.presentation.launches.LaunchesUpcomingFragment"
-        android:label="fragment_launches_upcoming"
-        tools:layout="@layout/fragment_launches_upcoming" />
-    <fragment
         android:id="@+id/launchesMainFragment"
         android:name="com.etoolkit.thespace.presentation.launches.LaunchesMainFragment"
         android:label="fragment_launches_main"
@@ -78,19 +62,58 @@
             android:id="@+id/action_launchesMainFragment_to_eventsFragment"
             app:destination="@id/eventsFragment" />
         <action
-            android:id="@+id/action_launchesMainFragment_to_launchesFragment"
-            app:destination="@id/launchesFragment" />
+            android:id="@+id/action_launchesMainFragment_to_launchesPastDetailFragment"
+            app:destination="@id/launchesPastDetailFragment" />
         <action
-            android:id="@+id/action_launchesMainFragment_to_launchesUpcomingFragment"
-            app:destination="@id/launchesUpcomingFragment" />
+            android:id="@+id/action_launchesMainFragment_to_launchesUpcomingDetailFragment"
+            app:destination="@id/launchesUpcomingDetailFragment" />
+        <action
+            android:id="@+id/action_launchesMainFragment_to_agenciesFragment"
+            app:destination="@id/agenciesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/launchesFragment"
-        android:name="com.etoolkit.thespace.presentation.launches.LaunchesFragment"
-        android:label="fragment_launches"
-        tools:layout="@layout/fragment_launches" >
+        android:id="@+id/launchesPastDetailFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.past.LaunchesPastDetailFragment"
+        android:label="LaunchesPastDetailFragment" >
         <action
-            android:id="@+id/action_launchesFragment_to_launchesDetailFragment"
-            app:destination="@id/launchesDetailFragment" />
+            android:id="@+id/action_launchesPastDetailFragment_to_launchesMainFragment"
+            app:destination="@id/launchesMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchesPastFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.past.LaunchesPastFragment"
+        android:label="fragment_launches_past"
+        tools:layout="@layout/fragment_launches_past" />
+    <fragment
+        android:id="@+id/launchesUpcomingFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.upcoming.LaunchesUpcomingFragment"
+        android:label="fragment_launches_upcoming"
+        tools:layout="@layout/fragment_launches_upcoming" />
+    <fragment
+        android:id="@+id/launchesUpcomingDetailFragment"
+        android:name="com.etoolkit.thespace.presentation.launches.upcoming.LaunchesUpcomingDetailFragment"
+        android:label="fragment_launches_upcoming_detail"
+        tools:layout="@layout/fragment_launches_upcoming_detail" >
+        <action
+            android:id="@+id/action_launchesUpcomingDetailFragment_to_launchesMainFragment"
+            app:destination="@id/launchesMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agenciesFragment"
+        android:name="com.etoolkit.thespace.presentation.agencies.AgenciesFragment"
+        android:label="fragment_agencies"
+        tools:layout="@layout/fragment_agencies" >
+        <action
+            android:id="@+id/action_agenciesFragment_to_agenciesDetailFragment"
+            app:destination="@id/agenciesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agenciesDetailFragment"
+        android:name="com.etoolkit.thespace.presentation.agencies.AgenciesDetailFragment"
+        android:label="fragment_agencies_detail"
+        tools:layout="@layout/fragment_agencies_detail" >
+        <action
+            android:id="@+id/action_agenciesDetailFragment_to_agenciesFragment"
+            app:destination="@id/agenciesFragment" />
     </fragment>
 </navigation>

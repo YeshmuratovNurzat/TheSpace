@@ -113,9 +113,6 @@
             <include layout="@layout/shimmer_astronauts" />
             <include layout="@layout/shimmer_astronauts" />
             <include layout="@layout/shimmer_astronauts" />
-            <include layout="@layout/shimmer_astronauts" />
-            <include layout="@layout/shimmer_astronauts" />
-            <include layout="@layout/shimmer_astronauts" />
 
         </LinearLayout>
 

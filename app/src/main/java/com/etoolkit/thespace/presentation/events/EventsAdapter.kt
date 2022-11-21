@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.ItemEventBinding
-import com.etoolkit.thespace.domain.events.model.Event
+import com.etoolkit.domain.events.model.Event
 
 class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsHolder>(){
 

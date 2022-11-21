@@ -14,8 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
 
-
     <style name="DialogStyle" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@drawable/main_button_radius</item>
         <item name="backgroundTint">@color/white</item>
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:windowBackground">@android:color/transparent</item>

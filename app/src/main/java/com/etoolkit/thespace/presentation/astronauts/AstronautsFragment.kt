@@ -72,14 +72,7 @@ class AstronautsFragment : Fragment() {
 
                 viewModel.getAstronautsSearchResult.observe(viewLifecycleOwner){
 
-                    if (it == null){
-                        binding.searchResultNull.visibility = View.VISIBLE
-                        Log.d("MyLog", "getAstronautsSearchResult = ${it?.results}")
-                    }
-
                     invisibleShimmer()
-
-                    binding.searchResultNull.visibility = View.GONE
                     Log.d("MyLog", "getAstronautsSearchResult = ${it.results}")
                     astronautsAdapter.setListData(it.results.asReversed())
 

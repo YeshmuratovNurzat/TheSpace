@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.etoolkit.thespace.data.network.astronauts.AstronautsApiFactory
-import com.etoolkit.thespace.data.network.astronauts.AstronautsRepositoryImpl
-import com.etoolkit.thespace.domain.astronauts.model.ResultAstronauts
-import com.etoolkit.thespace.domain.astronauts.usecase.GetAstronautsOffsetUseCase
-import com.etoolkit.thespace.domain.astronauts.usecase.GetAstronautsSearchUseCase
-import com.etoolkit.thespace.domain.astronauts.usecase.GetAstronautsUseCase
+import com.etoolkit.data.network.astronauts.AstronautsApiFactory
+import com.etoolkit.data.network.astronauts.AstronautsRepositoryImpl
+import com.etoolkit.domain.astronauts.model.ResultAstronauts
+import com.etoolkit.domain.astronauts.usecase.GetAstronautsOffsetUseCase
+import com.etoolkit.domain.astronauts.usecase.GetAstronautsSearchUseCase
+import com.etoolkit.domain.astronauts.usecase.GetAstronautsUseCase
 import kotlinx.coroutines.launch
 
 class AstronautsViewModel : ViewModel() {

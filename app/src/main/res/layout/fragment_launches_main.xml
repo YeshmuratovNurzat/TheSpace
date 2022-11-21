@@ -63,12 +63,10 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIconTint="@color/grey"
+        app:tabIconTint="@color/white"
         app:tabIndicatorColor="@color/black"
         app:tabSelectedTextColor="@color/black"
-        app:tabTextColor="@color/grey"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
+        app:tabTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -77,7 +75,6 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

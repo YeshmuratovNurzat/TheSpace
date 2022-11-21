@@ -11,7 +11,7 @@ import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.FragmentEventsDetailBinding
-import com.etoolkit.thespace.domain.events.model.Event
+import com.etoolkit.domain.events.model.Event
 
 class EventsDetailFragment : Fragment() {
 
