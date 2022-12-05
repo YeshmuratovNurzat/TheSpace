@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
@@ -15,10 +16,9 @@
             app:destination="@id/astronautsDetailFragment" />
         <action
             android:id="@+id/action_astronautsFragment_to_astronautsDetailFragment2"
-            app:destination="@id/astronautsDetailFragment" />
-        <action
-            android:id="@+id/action_astronautsFragment_to_launchesMainFragment"
-            app:destination="@id/launchesMainFragment" />
+            app:destination="@id/astronautsDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/astronautsDetailFragment"
@@ -37,9 +37,6 @@
         <action
             android:id="@+id/action_eventsFragment_to_eventsDetailFragment"
             app:destination="@id/eventsDetailFragment" />
-        <action
-            android:id="@+id/action_eventsFragment_to_launchesMainFragment"
-            app:destination="@id/launchesMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventsDetailFragment"
@@ -56,20 +53,11 @@
         android:label="fragment_launches_main"
         tools:layout="@layout/fragment_launches_main" >
         <action
-            android:id="@+id/action_launchesMainFragment_to_astronautsFragment"
-            app:destination="@id/astronautsFragment" />
-        <action
-            android:id="@+id/action_launchesMainFragment_to_eventsFragment"
-            app:destination="@id/eventsFragment" />
-        <action
-            android:id="@+id/action_launchesMainFragment_to_launchesPastDetailFragment"
-            app:destination="@id/launchesPastDetailFragment" />
-        <action
             android:id="@+id/action_launchesMainFragment_to_launchesUpcomingDetailFragment"
             app:destination="@id/launchesUpcomingDetailFragment" />
         <action
-            android:id="@+id/action_launchesMainFragment_to_agenciesFragment"
-            app:destination="@id/agenciesFragment" />
+            android:id="@+id/action_launchesMainFragment_to_launchesPastDetailFragment"
+            app:destination="@id/launchesPastDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/launchesPastDetailFragment"

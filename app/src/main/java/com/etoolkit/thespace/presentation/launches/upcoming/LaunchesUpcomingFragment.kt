@@ -6,12 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.FragmentLaunchesUpcomingBinding
 import com.etoolkit.thespace.presentation.launches.LaunchesViewModel
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.MaterialElevationScale
 
 class LaunchesUpcomingFragment : Fragment() {
 
@@ -27,6 +34,9 @@ class LaunchesUpcomingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLaunchesUpcomingBinding.inflate(layoutInflater)
+
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
+
         return  binding.root
     }
 
@@ -36,19 +46,17 @@ class LaunchesUpcomingFragment : Fragment() {
         val adapter = LaunchesUpcomingAdapter()
         binding.rcView.adapter = adapter
 
-        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
-
         adapter.onClick = {
             val bundle = Bundle()
-            bundle.putSerializable("launchUpcoming",it)
-            navController.navigate(R.id.action_launchesMainFragment_to_launchesUpcomingDetailFragment, bundle)
+            bundle.putSerializable("launchUpcoming", it)
+            val extras = FragmentNavigatorExtras(view.findViewById<ImageView>(R.id.launch_image) to "image_big")
+            navController.navigate(R.id.action_launchesMainFragment_to_launchesUpcomingDetailFragment, bundle,null, extras)
         }
 
         viewModel.getLaunchesUpcoming()
 
         viewModel.getLaunchesUpcomingResult.observe(viewLifecycleOwner){
             invisibleShimmer()
-
             Log.d("MyLog","getLaunchesUpcomingResult = ${it.results}")
             adapter.setListData(it.results)
         }
@@ -76,6 +84,11 @@ class LaunchesUpcomingFragment : Fragment() {
     override fun onPause() {
         binding.shimmerContainer.stopShimmerAnimation()
         super.onPause()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

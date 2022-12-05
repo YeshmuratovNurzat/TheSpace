@@ -9,4 +9,8 @@ class EventsRepositoryImpl(private val service: EventsApiService) : EventsReposi
     override suspend fun getEvents(): ResultEvents {
         return service.getEvents()
     }
+
+    override suspend fun getEventsSearch(search: String): ResultEvents {
+        return service.getEventsSearch(search)
+    }
 }

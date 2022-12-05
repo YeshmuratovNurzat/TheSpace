@@ -7,7 +7,7 @@
     <item
         android:id="@+id/launches"
         android:title="Launchs"
-        android:icon="@drawable/ic_liftoff"/>
+        android:icon="@drawable/ic_launches"/>
 
     <item
         android:id="@+id/events"

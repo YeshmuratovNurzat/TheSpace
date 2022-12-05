@@ -3,6 +3,8 @@ package com.etoolkit.thespace.presentation.events
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -18,6 +20,8 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsHolder>(){
 
     class EventsHolder(private val binding: ItemEventBinding) : RecyclerView.ViewHolder(binding.root){
 
+        lateinit var cardView : CardView
+
         fun bind(event : Event){
 
             Glide.with(binding.root)
@@ -30,6 +34,9 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsHolder>(){
             binding.eventName.text = event.name
             binding.eventData.text = event.date
             binding.eventStatus.text = event.type.name
+
+            cardView = binding.cardContainer
+
         }
     }
 
@@ -44,6 +51,9 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventsHolder>(){
         holder.itemView.setOnClickListener {
             onClick?.invoke(events[position])
         }
+
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rc_anim_two))
+
     }
 
     override fun getItemCount(): Int {

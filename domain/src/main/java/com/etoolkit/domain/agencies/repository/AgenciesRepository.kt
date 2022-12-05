@@ -6,4 +6,6 @@ interface AgenciesRepository {
 
     suspend fun getAgencies() : ResultAgencies
 
+    suspend fun getAgenciesSearch(search : String) : ResultAgencies
+
 }

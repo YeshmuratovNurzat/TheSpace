@@ -33,7 +33,7 @@
                 android:layout_width="21dp"
                 android:layout_height="21dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_keyboard_backspace"
+                android:src="@drawable/ic_backspace"
                 app:tint="@color/black" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -70,15 +70,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="?attr/actionBarSize"
-            android:padding="5dp"
-            android:layout_marginTop="5dp">
+            android:padding="8dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/agencies_image_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="25dp"
-                app:cardElevation="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -87,7 +85,7 @@
                     android:id="@+id/agencies_image"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:src="@drawable/ic_launcher_background"
+                    android:src="@drawable/ic_observatory"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -100,16 +98,23 @@
                 android:text="Agencies Name"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:textAlignment="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agencies_image_container" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/color_background_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agencies_name"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/agencies_administrator"
@@ -117,13 +122,12 @@
                 android:layout_height="wrap_content"
                 android:text="Administrator"
                 android:textSize="18sp"
-                android:fontFamily="@font/raude"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agencies_name" />
@@ -131,6 +135,7 @@
             <View
                 android:layout_width="300dp"
                 android:layout_height="2dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/color_background_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -142,13 +147,12 @@
                 android:layout_height="wrap_content"
                 android:text="Country Code"
                 android:textSize="18sp"
-                android:fontFamily="@font/raude"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agencies_administrator" />
@@ -156,6 +160,7 @@
             <View
                 android:layout_width="300dp"
                 android:layout_height="2dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/color_background_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -166,12 +171,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Description"
-                android:textSize="16sp"
-                android:typeface="monospace"
-                android:fontFamily="@font/raude"
+                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agencies_country_code" />
@@ -179,75 +185,35 @@
             <View
                 android:layout_width="300dp"
                 android:layout_height="2dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/color_background_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/agencies_description"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/agencies_spacecraft"
+                android:id="@+id/agencies_launchers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Spacecraft"
-                android:textSize="16sp"
+                android:text="Launchers"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/raude"
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/agencies_description" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/event_detail_rc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/agencies_spacecraft"/>
+                app:layout_constraintTop_toBottomOf="@+id/agencies_description" />
 
             <View
                 android:layout_width="300dp"
                 android:layout_height="2dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/color_background_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/event_detail_rc"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/launches_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Launches:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/raude"
-                android:textColor="@color/black"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/event_detail_rc" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/event_detail_launches_rc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/launches_title"/>
-
+                app:layout_constraintTop_toBottomOf="@+id/agencies_launchers"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

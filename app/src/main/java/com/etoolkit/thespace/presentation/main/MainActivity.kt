@@ -5,47 +5,75 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.*
 import com.etoolkit.thespace.R
 import com.etoolkit.thespace.databinding.ActivityMainBinding
 import com.etoolkit.thespace.util.interfaces.DrawerViewInterface
+import com.google.android.material.navigation.NavigationView
 import org.imaginativeworld.oopsnointernet.callbacks.ConnectionCallback
 import org.imaginativeworld.oopsnointernet.dialogs.pendulum.NoInternetDialogPendulum
 
 class MainActivity : AppCompatActivity(), DrawerViewInterface {
 
-    private lateinit var binding : ActivityMainBinding
+    private var _binding : ActivityMainBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var appBarConfiguration : AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toolbar : Toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.hide()
+
+        val drawerLayout = binding.drawerLayout
+        val navigationView : NavigationView = binding.navigationView
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content) as NavHostFragment
         val navController = navHostFragment.navController
 
-        binding.navigationView.setNavigationItemSelectedListener {
+        appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.launches,
+            R.id.events,
+            R.id.agencies,
+            R.id.astronauts),
+            drawerLayout)
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navigationView.setupWithNavController(navController)
+
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(navigationView, navController)
+
+        navigationView.setNavigationItemSelectedListener {
 
             when(it.itemId){
 
                 R.id.launches -> {
                     Toast.makeText(this,"Launches",Toast.LENGTH_SHORT).show()
+                    navController.navigate(R.id.launchesMainFragment)
                 }
 
                 R.id.events -> {
                     Toast.makeText(this,"Events",Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.action_launchesMainFragment_to_eventsFragment)
+                    navController.navigate(R.id.eventsFragment)
                 }
 
                 R.id.astronauts -> {
                     Toast.makeText(this,"Astronauts",Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.action_launchesMainFragment_to_astronautsFragment)
+                    navController.navigate(R.id.astronautsFragment)
                 }
 
                 R.id.agencies -> {
                     Toast.makeText(this,"Agencies",Toast.LENGTH_SHORT).show()
-                    navController.navigate(R.id.action_launchesMainFragment_to_agenciesFragment)
+                    navController.navigate(R.id.agenciesFragment)
                 }
 
                 R.id.exit ->{
@@ -69,6 +97,12 @@ class MainActivity : AppCompatActivity(), DrawerViewInterface {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content) as NavHostFragment
+        val navController = navHostFragment.navController
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onBackPressed() {
@@ -123,5 +157,10 @@ class MainActivity : AppCompatActivity(), DrawerViewInterface {
     override fun showBackIcon() {}
 
     override fun showHamburgerIcon() {}
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 
 }

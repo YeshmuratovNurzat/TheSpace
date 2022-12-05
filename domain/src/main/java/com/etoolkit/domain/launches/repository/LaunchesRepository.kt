@@ -4,7 +4,7 @@ import com.etoolkit.domain.launches.model.ResultLaunches
 
 interface LaunchesRepository {
 
-    suspend fun getLaunches() : ResultLaunches
+    suspend fun getLaunchesPast() : ResultLaunches
 
     suspend fun getLaunchesUpcoming() : ResultLaunches
 

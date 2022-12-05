@@ -12,7 +12,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class LaunchesMainFragment : Fragment() {
 
-    private lateinit var binding: FragmentLaunchesMainBinding
+    private var _binding : FragmentLaunchesMainBinding? = null
+    private val binding get() = _binding!!
     private lateinit var drawerViewInterface: DrawerViewInterface
 
     private val titles = arrayOf(
@@ -31,7 +32,7 @@ class LaunchesMainFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentLaunchesMainBinding.inflate(layoutInflater)
+        _binding = FragmentLaunchesMainBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -51,6 +52,11 @@ class LaunchesMainFragment : Fragment() {
         binding.menu.setOnClickListener {
             drawerViewInterface.showDrawer()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

@@ -64,10 +64,10 @@ class AstronautsFragment : Fragment() {
         }
 
         //search astronaut
-        binding.employeeSearch.setOnEditorActionListener { textView, i, keyEvent ->
+        binding.search.setOnEditorActionListener { textView, i, keyEvent ->
 
             if(i == EditorInfo.IME_ACTION_SEARCH){
-                viewModel.getAstronautSearch(binding.employeeSearch.text.toString())
+                viewModel.getAstronautSearch(binding.search.text.toString())
                 visibilityShimmer()
 
                 viewModel.getAstronautsSearchResult.observe(viewLifecycleOwner){

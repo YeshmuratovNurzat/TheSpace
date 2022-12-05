@@ -10,6 +10,56 @@
     tools:openDrawer="start"
     tools:context=".presentation.main.MainActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/menu"
+                            android:layout_width="21dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="start|center"
+                            android:tint="@color/black"
+                            android:src="@drawable/ic_menu" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="6"
+                            android:fontFamily="@font/raude"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:text="Launches"
+                            android:textAllCaps="true"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="21dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="center" />
+
+                </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -26,6 +76,7 @@
                     app:layout_constraintTop_toTopOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_view"

@@ -48,6 +48,8 @@ class EventsDetailFragment : Fragment() {
         binding.eventDescription.text = event.description
         binding.eventLocation.text = event.location
 
+        binding.toolbarName.text = event.name
+
         val adapter = EventsProgramAdapter()
         binding.eventDetailRc.adapter = adapter
 

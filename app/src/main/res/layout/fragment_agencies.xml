@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/color_background"
     tools:context=".presentation.agencies.AgenciesFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -50,10 +51,11 @@
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
-            <View
+            <ImageView
                 android:layout_width="21dp"
-                android:layout_height="17dp"
-                android:layout_gravity="center" />
+                android:layout_height="21dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic__filter"/>
 
         </LinearLayout>
 
@@ -114,7 +116,6 @@
         </LinearLayout>
 
     </com.facebook.shimmer.ShimmerFrameLayout>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_view"

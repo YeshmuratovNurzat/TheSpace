@@ -10,5 +10,6 @@ interface EventsApiService {
     suspend fun getEvents() : ResultEvents
 
     @GET("event")
-    suspend fun getSearchEvents(@Query("search")search : String) : ResultEvents
+    suspend fun getEventsSearch(@Query("search")search : String) : ResultEvents
+
 }

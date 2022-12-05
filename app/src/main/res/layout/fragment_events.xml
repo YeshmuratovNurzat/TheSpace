@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.events.EventsFragment">
 
@@ -60,7 +59,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/search"
+        android:id="@+id/search_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
@@ -80,12 +79,15 @@
             android:textSize="16sp"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/employeeSearch"
+            android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="8"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
             android:hint="Search"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -107,16 +109,10 @@
             <include layout="@layout/shimmer_events" />
             <include layout="@layout/shimmer_events" />
             <include layout="@layout/shimmer_events" />
-            <include layout="@layout/shimmer_events" />
-            <include layout="@layout/shimmer_events" />
-            <include layout="@layout/shimmer_events" />
-            <include layout="@layout/shimmer_events" />
-            <include layout="@layout/shimmer_events" />
 
         </LinearLayout>
 
     </com.facebook.shimmer.ShimmerFrameLayout>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_view"

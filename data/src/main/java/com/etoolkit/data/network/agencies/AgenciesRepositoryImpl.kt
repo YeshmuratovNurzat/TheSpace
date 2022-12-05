@@ -9,4 +9,8 @@ class AgenciesRepositoryImpl(private val service: AgenciesApiService) : Agencies
         return service.getAgencies()
     }
 
+    override suspend fun getAgenciesSearch(search: String): ResultAgencies {
+        return service.getAgenciesSearch(search)
+    }
+
 }

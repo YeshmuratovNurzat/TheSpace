@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/card_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="240dp"
@@ -10,21 +11,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/event_info_container"
+        android:id="@+id/launch_info_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/event_image"
+            android:id="@+id/launch_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/rocket"/>
+            android:src="@drawable/ic_launches"
+            android:transitionName="image_small"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/event_status"
+            android:id="@+id/launch_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/success_color"
@@ -46,24 +48,25 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/event_image">
+            app:layout_constraintTop_toBottomOf="@+id/launch_image">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/event_name"
+                android:id="@+id/launch_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/raude"
                 android:text="Name"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/event_data"
+                android:id="@+id/launch_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/raude"
-                android:text="Data"
+                android:text="Date"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp" />

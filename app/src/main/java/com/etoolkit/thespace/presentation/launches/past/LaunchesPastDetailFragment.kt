@@ -30,9 +30,7 @@ class LaunchesPastDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLaunchesDetailPastBinding.inflate(layoutInflater,container,false)
-
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content)
-
         return binding.root
     }
 
@@ -42,7 +40,7 @@ class LaunchesPastDetailFragment : Fragment() {
         Glide.with(binding.root)
             .load(launch.image)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .placeholder(R.drawable.ic_rocket)
+            .placeholder(R.drawable.ic_launches)
             .into(binding.launchDetailImage)
 
         binding.launchName.text = launch.name ?: " "

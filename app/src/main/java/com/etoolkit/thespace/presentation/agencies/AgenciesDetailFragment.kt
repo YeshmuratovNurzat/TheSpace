@@ -37,24 +37,28 @@ class AgenciesDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         Glide.with(binding.root)
             .load(agencies.image_url)
             .centerCrop()
-            .placeholder(R.drawable.ic_newspaper)
+            .placeholder(R.drawable.ic_observatory)
             .into(binding.agenciesImage)
 
         binding.agenciesName.text = agencies.name
         binding.agenciesAdministrator.text = agencies.administrator
         binding.agenciesCountryCode.text = agencies.country_code
         binding.agenciesDescription.text = agencies.description
-        binding.agenciesSpacecraft.text = agencies.spacecraft
+        binding.agenciesLaunchers.text = agencies.launchers
 
-
+        // back
         binding.back.setOnClickListener {
             navController.navigate(R.id.action_agenciesDetailFragment_to_agenciesFragment)
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     companion object {

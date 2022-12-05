@@ -45,16 +45,15 @@ class LaunchesPastFragment : Fragment() {
             navController.navigate(R.id.action_launchesMainFragment_to_launchesPastDetailFragment, bundle)
         }
 
-        viewModel.getLaunches()
+        viewModel.getLaunchesPast()
 
-        viewModel.getLaunchesResult.observe(viewLifecycleOwner){
-
+        viewModel.getLaunchesPastResult.observe(viewLifecycleOwner){
             invisibleShimmer()
-
             Log.d("MyLog","getLaunchesResult = ${it.results}")
             launchesPastAdapter.setListData(it.results)
         }
 
+        // Search
         binding.search.setOnEditorActionListener { textView, i, keyEvent ->
             if(i == EditorInfo.IME_ACTION_SEARCH) {
                 viewModel.getLaunchesSearch(binding.search.text.toString())
@@ -67,6 +66,7 @@ class LaunchesPastFragment : Fragment() {
             }
             true
         }
+
     }
 
     // startShimmerAnimation()

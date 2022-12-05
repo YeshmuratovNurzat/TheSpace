@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.splash.SplashScreen">
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
@@ -19,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="20dp"/>
+        android:layout_margin="50dp"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"

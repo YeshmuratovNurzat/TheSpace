@@ -25,7 +25,7 @@
             app:civ_border_color="@color/color_civ_border"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_rocket"/>
+            android:src="@drawable/ic_launches"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/launch_status"

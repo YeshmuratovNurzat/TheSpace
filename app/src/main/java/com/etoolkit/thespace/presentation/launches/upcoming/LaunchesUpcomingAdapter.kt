@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.cardview.widget.CardView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -21,18 +24,20 @@ class LaunchesUpcomingAdapter : RecyclerView.Adapter<LaunchesUpcomingAdapter.Lau
 
     class LaunchesUpcomingViewHolder(private val binding: ItemLaunchUpcomingBinding) : RecyclerView.ViewHolder(binding.root){
 
-        fun bind(launch: Launch){
+        lateinit var cardView: CardView
+        lateinit var countDownTimer: CountDownTimer
 
-            val countDownTimer: CountDownTimer
+        fun bind(launch: Launch){
 
             Glide.with(binding.root)
                 .load(launch.image)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.ic_rocket)
-                .into(binding.eventImage)
+                .placeholder(R.drawable.ic_launches)
+                .into(binding.launchImage)
 
-            binding.eventName.text = launch.name
+            binding.launchName.text = launch.name
+            cardView = binding.cardContainer
 
             val currentTime = Calendar.getInstance().time
             val endDateDay = launch.window_start
@@ -61,11 +66,17 @@ class LaunchesUpcomingAdapter : RecyclerView.Adapter<LaunchesUpcomingAdapter.Lau
 
                     val elapsedSeconds = diff / secondsInMilli
 
-                    binding.eventData.text = "$elapsedDays days $elapsedHours hs $elapsedMinutes min $elapsedSeconds sec"
+                    val days = elapsedDays.toString()
+                    val hs = elapsedHours.toString()
+                    val min = elapsedMinutes.toString()
+                    val sec = elapsedSeconds.toString()
+
+                    binding.launchDate.text = "$days days $hs hs $min min $sec sec"
                 }
 
                 override fun onFinish() {
-                    binding.eventStatus.text = "done!"
+                    binding.launchStatus.text = "Done!"
+                    binding.launchDate.text = ""
                 }
             }.start()
         }
@@ -82,6 +93,9 @@ class LaunchesUpcomingAdapter : RecyclerView.Adapter<LaunchesUpcomingAdapter.Lau
         holder.itemView.setOnClickListener {
             onClick?.invoke(launches[position])
         }
+
+        holder.cardView.startAnimation(AnimationUtils.loadAnimation(holder.itemView.context,R.anim.rc_anim_two))
+
     }
 
     override fun getItemCount(): Int {

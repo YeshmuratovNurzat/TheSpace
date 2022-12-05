@@ -5,8 +5,9 @@ import com.etoolkit.domain.launches.repository.LaunchesRepository
 
 class LaunchesRepositoryImpl(private val service: LaunchesApiService) : LaunchesRepository {
 
-    override suspend fun getLaunches(): ResultLaunches {
-        return service.getLaunches()
+
+    override suspend fun getLaunchesPast(): ResultLaunches {
+        return service.getLaunchesPast()
     }
 
     override suspend fun getLaunchesUpcoming(): ResultLaunches {
@@ -16,4 +17,5 @@ class LaunchesRepositoryImpl(private val service: LaunchesApiService) : Launches
     override suspend fun getLaunchesSearch(search : String): ResultLaunches {
         return service.getLaunchesSearch(search)
     }
+
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/card_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="240dp"
@@ -21,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/rocket"/>
+            android:src="@drawable/ic_observatory"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/agencies_status"
@@ -58,7 +59,6 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:padding="5dp"/>
-
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

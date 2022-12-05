@@ -29,7 +29,7 @@ class LaunchesPastAdapter : RecyclerView.Adapter<LaunchesPastAdapter.LaunchesHol
                 .load(launches.image)
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.ic_rocket)
+                .placeholder(R.drawable.ic_launches)
                 .into(binding.launchImage)
 
             binding.launchName.text = launches.name

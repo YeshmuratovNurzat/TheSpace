@@ -33,10 +33,11 @@
                 android:layout_width="21dp"
                 android:layout_height="21dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_keyboard_backspace"
+                android:src="@drawable/ic_backspace"
                 app:tint="@color/black" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -88,7 +89,7 @@
                     android:id="@+id/event_image"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:src="@drawable/ic_launcher_background"
+                    android:src="@drawable/ic_newspaper"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
 
